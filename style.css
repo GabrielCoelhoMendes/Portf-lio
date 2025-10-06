@@ -1,0 +1,537 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: monospace;
+  background-color: #eee;
+  color: #00f5ff;
+}
+
+body.Hacker-mode {
+  background-color: #151825;
+  color: #378AD9;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #444;
+  border-bottom: 4px solid #d9a74d;
+  padding: 10px 20px;
+}
+
+body.Hacker-mode .navbar {
+  background-color: #183438;
+  border-color: #84C4A5;
+}
+
+.navbar-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links, .nav-buttons {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-buttons {
+  gap: 10px;
+}
+
+.nav-links a {
+  color: #00f5ff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+body.Hacker-mode .nav-links a {
+  color: #63D21B;
+}
+
+/* BOTÕES */
+.lang-button, .theme-button {
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 5px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-button img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+/* --- MODO DIA (default) --- */
+.lang-button, 
+.theme-button {
+  background-color: #e0e0e0;
+  color: black;
+  border: 2px solid #000;
+}
+
+/* --- MODO VERDE --- */
+body.Hacker-mode .lang-button, 
+body.Hacker-mode .theme-button {
+  background-color: #1e1e1e;
+  color: white;
+  border: 2px solid #378AD9;
+}
+
+
+
+/* TERMINAL */
+.terminal {
+  color: #378AD9;
+  padding: 20px;
+  font-size: 1.7vh;
+  min-height: 200px;
+}
+
+body.Hacker-mode .terminal {
+  background-color: #151825;
+  color: #63D21B;
+}
+
+.linha-terminal {
+  display: flex;
+  align-items: center;
+}
+
+.prompt {
+  margin-right: 5px;
+}
+
+.cursor {
+  width: 12px;
+  height: 20px;
+  display: inline-block;
+}
+
+.cursor:not(.stop) {
+  animation: piscar 0.7s infinite;
+}
+
+@keyframes piscar {
+  0%, 100% { background-color: blue; }
+  50% { background-color: black; }
+}
+
+.cursor.stop {
+  animation: none;
+  background-color: transparent;
+}
+
+.hidden {
+  display: none;
+}
+
+.linha {
+  white-space: pre-line;
+}
+
+.linha span,
+body.Hacker-mode .linha span {
+  color: #378AD9;
+}
+
+
+/* SEÇÃO SOBRE MIM */
+.sobre-mim {
+  padding: 60px 20px;
+}
+
+
+.sobre-mim-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;           
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-direction: row-reverse;
+}
+
+.sobre-mim .texto h1 {
+  font-size: 14vh;
+  color: #378AD9;
+  margin-bottom: 20px;
+}
+
+body.Hacker-mode .sobre-mim .texto h1 {
+  font-size: 14vh;
+  color: #63D21B;
+  margin-bottom: 20px;
+}
+
+.sobre-mim .texto ul {
+  list-style: none;
+  font-size: 3vh;
+  line-height: 1.6;
+}
+
+.sobre-mim .texto li {
+  color: #378AD9;
+  margin-bottom: 8px;
+}
+
+body.Hacker-mode .sobre-mim .texto li {
+  color: #63D21B;
+  margin-bottom: 8px;
+}
+
+.sobre-mim .imagem {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.sobre-mim .imagem img {
+  max-width: 50vh;   
+  border-radius: 50%; 
+  background-color: #D9D9D9;
+  object-fit: cover;
+}
+
+.linha-divisao {
+    display: flex;
+    justify-content: center;
+    color: #378AD9;
+    font-size: 100%;
+}
+
+body.Hacker-mode .linha-divisao {
+  background-color: #151825;
+    display: flex;
+    justify-content: center;
+    color: #63D21B;
+}
+
+/* HABILIDADES */
+
+.habilidades {
+  padding: 60px 20px;
+  display: flex;               
+  justify-content: center;     
+  align-items: flex-start;     
+  gap: 10%;                   
+  flex-wrap: wrap;             
+}
+
+
+.habilidades-card {
+  background-color: #E9C170;
+  padding: 30px;
+  border-radius: 20px;
+  width: 70vh;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.habilidades-card h2 {
+  color: #378AD9;
+  font-size: 40px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+
+.habilidades-card h3 {
+  color: #378AD9;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.habilidades-card p {
+  color: #205f9b;
+  text-align: center;
+  font-size: 29px;
+  margin-top: 40px;
+}
+
+body.Hacker-mode .habilidades-card {
+  background-color: #84C4A5;
+}
+
+/* CREYE */
+
+.Creye {
+  padding: 60px;
+  display: flex;               
+  justify-content: center;     
+  align-items: flex-start;     
+  gap: 10%;                   
+  flex-wrap: wrap;   
+  width: 100%;     
+ 
+}
+
+
+.Creye-card {
+  background-color: #698AE8;
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  
+}
+
+body.Circle-Creye-mode  .Creye {
+ padding: 60px;
+  display: flex;               
+  justify-content: left;     
+  align-items: flex-start;     
+  gap: 10%;                   
+  flex-wrap: wrap;   
+  width: 100%;   
+}
+
+body.Circle-Creye-mode  .Creye-card {
+  width: 30%;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fotodoCreye{
+  width: 0%;
+}
+
+body.Circle-Creye-mode  .fotodoCreye{
+  width: 100%;
+  border-radius: 5%; 
+  transition: 0.8s;
+
+}
+
+/* GEEK BLOSSOM */
+
+.GeekBlossom {
+  padding: 60px;
+  display: flex;               
+  justify-content: center;     
+  align-items: flex-start;     
+  gap: 10%;                   
+  flex-wrap: wrap;   
+  width: 100%;          
+}
+
+
+.GeekBlossom-card {
+  background-color: #AADFD7;
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.GeekBlossom-card img {
+  width: 15%;
+}
+
+body.Circle-GeekBlossom-mode  .GeekBlossom {
+  padding: 60px;
+   display: flex;               
+   justify-content: left;     
+   align-items: flex-start;     
+   gap: 10%;                   
+   flex-wrap: wrap;   
+   width: 100%;   
+ }
+ 
+body.Circle-GeekBlossom-mode  .GeekBlossom-card {
+  width: 30%;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ body.Circle-GeekBlossom-mode .GeekBlossom-card img {
+  width: 60%;
+}
+
+.GeekBlossom a, .fotodoGeekBlossom {width: 0%;}
+
+body.Circle-GeekBlossom-mode  a, body.Circle-GeekBlossom-mode .fotodoGeekBlossom{
+  width: 60%;
+  border-radius: 5%; 
+  transition: 0.8s;
+}
+
+/* GITHUB */
+
+.Github {
+  padding: 60px;
+  display: flex;               
+  justify-content: center;     
+  align-items: flex-start;     
+  gap: 10%;                   
+  flex-wrap: wrap;   
+  width: 100%;          
+}
+
+.logoGithub {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.Github div{  
+  padding-top: 20vh;
+}
+
+.Github a{
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;      
+}
+
+body.Hacker-mode .logoGithub {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+filter: invert();
+}
+
+body.Hacker-mode .Github a{
+  color: #63D21B;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;      
+  padding-top: 10vh;
+}
+
+/* GITHUB */
+
+.Rodape{
+  margin-top: 2vh;
+  background-color: #535353;
+  height: 100vh;
+}
+
+.ladoesquerdo h3{
+  padding-left: 3%;
+  padding-top: 2%;
+  color: #378AD9;
+  font-size: 3vh;
+}
+
+/* ====== RODAPÉ ====== */
+
+.rodape {
+  background-color: #535353;
+  padding: 40px 0;
+  border-top: 4px solid #d9a74d;
+  text-align: left;
+}
+
+body.Hacker-mode .rodape {
+  background-color: #183438;
+  padding: 40px 0;
+  border-top: 4px solid #84C4A5;
+  text-align: left;
+}
+
+.rodape h3 {
+  color: #378AD9;
+  margin-left: 30px;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+body.Hacker-mode .rodape h3 {
+  color: #63D21B;
+  margin-left: 30px;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.contato-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contato-card {
+  background-color: #E9C170;
+  width: 220px;
+  height: 140px;
+  border-radius: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+body.Hacker-mode .contato-card {
+  background-color: #91FB98;
+  width: 220px;
+  height: 140px;
+  border-radius: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.contato-card:hover {
+  transform: scale(1.05);
+}
+
+.contato-icon {
+  width: 40px;
+  margin-bottom: 10px;
+}
+
+.contato-card h4 {
+  color: #000;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.contato-card p {
+  font-size: 12px;
+  color: #000;
+  font-weight: bold;
+  line-height: 1.2;
+  word-break: break-all;
+}
