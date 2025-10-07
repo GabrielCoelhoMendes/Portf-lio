@@ -9,6 +9,8 @@ body {
   font-family: monospace;
   background-color: #eee;
   color: #00f5ff;
+  justify-self: center;
+  width: 100%;
 }
 
 body.Hacker-mode {
@@ -537,5 +539,6 @@ body.Hacker-mode .contato-card {
   line-height: 1.2;
   word-break: break-all;
 }
+
 
 
